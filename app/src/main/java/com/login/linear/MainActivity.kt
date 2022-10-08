@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val imageGoogleLogo = findViewById<ImageView>(R.id.image_google_logo)
+        val imagKakaoLogo = findViewById<ImageView>(R.id.image_kakao_logo)
         val textLoginGuide = findViewById<TextView>(R.id.text_login_guide)
         val textResult = findViewById<TextView>(R.id.text_result)
         val editId = findViewById<EditText>(R.id.edit_id)
@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener(View.OnClickListener() {
             var result = editId.text.toString() + "님 환영합니다!"
-            textResult.text = result
+            var password = editPassword.text.toString()
+            if(password=="bcsd")textResult.text = result
+            else textResult.text = "비밀번호가 틀렸습니다. 다시 확인해주세요!"
         })
+
     }
 }
